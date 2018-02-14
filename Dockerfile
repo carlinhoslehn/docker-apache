@@ -13,7 +13,7 @@ RUN apt-get update \
         php5-curl \
         php5-xdebug \
         php-pear \
-	vi \
+	vim \
 	wget \
         php-apc && \
     rm -rf /var/lib/apt/lists/* && \

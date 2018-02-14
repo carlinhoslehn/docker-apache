@@ -25,13 +25,13 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
     sed -i "s/display_errors = Off/display_errors = On/g" /etc/php5/apache2/php.ini && \
     sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
 
-RUN echo "zend_extension=xdebug.so" > /etc/php5/apache2/php.ini \
+RUN echo "zend_extension=xdebug.so" >> /etc/php5/apache2/php.ini \
 && echo "xdebug.remote_enable=on"  >> /etc/php5/mods-available/xdebug.ini \
 && echo "xdebug.remote_host=localhost" >> /etc/php5/mods-available/xdebug.ini \
 && echo "xdebug.profiler_enable=1" >> /etc/php5/mods-available/xdebug.ini \
 && echo "xdebug.remote_port=9001" >> /etc/php5/mods-available/xdebug.ini \
 && echo "xdebug.remote_connect_back=On" >> /etc/php5/mods-available/xdebug.ini \
-&& echo "memory_limit = 64M" > /etc/php5/apache2/php.ini
+&& echo "memory_limit = 64M" >> /etc/php5/apache2/php.ini
 
 
 ENV ALLOW_OVERRIDE **true**
